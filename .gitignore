@@ -1,3 +1,4 @@
 venv/
 rag/index.db
 rag/index.db
+solana-tools/node_modules/
