@@ -6,6 +6,7 @@
 | workspace-sync | Automated workspace backup to GitHub | DevTeam | Deployed | Yes |
 | wallet-manager | Secure Solana wallet generation & balance checking | DevTeam | Deployed | Yes |
 | token-launcher | SPL token creation, minting, and info | DevTeam | Deployed | Yes |
+| sniper-monitor | Token data from DexScreener (trending, search, top) | Sniper | Deployed | Yes |
 | [pending] | Supabase schema | All | In Queue | No |
 
 ## Current Queue

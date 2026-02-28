@@ -37,7 +37,7 @@
 - **Tool Access:** Agents must explicitly justify the need for any new tools. No extra tools without serious reason. Least privilege applies.
 
 ## Dev Team Queue
-- **TASK-001 (Solana Ops):** Build Wallet Manager CLI, Token Launcher CLI (Helius + Solana fallback), and Sniper Data Monitor CLI (pump.fun + DexScreener). Sniper does not execute trades; uses AK.pro. [STATUS: PENDING]
+- **TASK-001 (Solana Ops):** Build Wallet Manager CLI (Done), Token Launcher CLI (Done), and Sniper Data Monitor CLI (pump.fun + DexScreener). Sniper does not execute trades; uses AK.pro. [STATUS: PENDING]
 
 ## Dev Team Queue
 - **TASK-002 (Intelligence Ops):** Build Local Document RAG script. Must run in sandbox, ingest PDFs/Markdown, and provide semantic search to replace NotebookLM. [STATUS: PENDING]
