@@ -3,6 +3,8 @@
 ## Tool Library
 | Tool | Purpose | Department | Status | Deployed |
 |---|---|---|---|---|
+| workspace-sync | Automated workspace backup to GitHub | DevTeam | Deployed | Yes |
+| wallet-manager | Secure Solana wallet generation & balance checking | DevTeam | Deployed | Yes |
 | [pending] | Supabase schema | All | In Queue | No |
 
 ## Current Queue
