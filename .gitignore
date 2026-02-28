@@ -1,0 +1,21 @@
+# Secrets - never commit
+.env
+.env.*
+*.pem
+*.key
+github_token*
+*_token*
+*_secret*
+
+# OpenClaw runtime
+.openclaw/
+*.log
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.swp

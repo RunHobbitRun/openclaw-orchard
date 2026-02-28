@@ -1,0 +1,116 @@
+# Master Model Routing Scheme
+# Defines primary and fallback models for all Orchard departments.
+
+manager:
+  primary: google/gemini-3.1-pro
+  fallbacks:
+    - google/gemini-3.1-flash
+    - opencode_paid/gemini-3.1-pro
+    - openrouter/gemini-3.1-pro-next
+    - openrouter/gemini-3.1-flash-next
+
+auditor:
+  primary: ollama:cloud/glm-5
+  fallbacks:
+    - opencode_free/glm-4.7-free
+    - opencode_paid/glm-5
+    - ollama:cloud/deepseek-r1-distill
+    - openrouter/deepseek-r1
+    - openrouter/glm-5-next
+
+devteam:
+  lead_coder:
+    primary: ollama:cloud/minimax-m2.5
+    fallbacks:
+      - opencode_paid/minimax-m2.5
+      - openrouter/minimax-m2.5-next
+  reviewer:
+    primary: opencode_free/glm-4.7-free
+    fallbacks:
+      - ollama:cloud/glm-5
+      - opencode_paid/glm-5
+      - openrouter/glm-5-next
+  helper:
+    primary: ollama:cloud/small-coder-model
+    fallbacks:
+      - google/gemini-3.1-flash
+      - openrouter/qwen-coder-next
+
+factory:
+  primary: moonshot/kimi-k2.5
+  fallbacks:
+    - opencode_free/kimi-k2.5-free
+    - ollama:cloud/kimi-k2.5
+    - opencode_paid/kimi-k2.5
+    - ollama:cloud/minimax-m2.5
+    - openrouter/kimi-k2.5-next
+
+finance:
+  primary: ollama:cloud/glm-5
+  fallbacks:
+    - opencode_free/glm-4.7-free
+    - opencode_paid/glm-5
+    - ollama:cloud/deepseek-r1-distill
+    - openrouter/glm-5-next
+
+intelligence:
+  primary: moonshot/kimi-k2.5
+  fallbacks:
+    - opencode_free/kimi-k2.5-free
+    - ollama:cloud/kimi-k2.5
+    - google/gemini-3.1-pro
+    - openrouter/kimi-k2.5-next
+    - openrouter/gemini-3.1-pro-next
+
+prediction_god:
+  primary_reasoner:
+    primary: ollama:cloud/deepseek-r1-distill
+    fallbacks:
+      - ollama:cloud-cloud-large/deepseek-r1
+      - deepseek/deepseek-r1
+      - openrouter/deepseek-r1-next
+  state_adapter:
+    primary: opencode_free/glm-4.7-free
+    fallbacks:
+      - ollama:cloud/glm-5
+      - opencode_paid/glm-5
+      - openrouter/glm-5-next
+
+scout:
+  primary: moonshot/kimi-k2.5
+  fallbacks:
+    - opencode_free/kimi-k2.5-free
+    - ollama:cloud/kimi-k2.5
+    - opencode_free/minimax-m2.1-free
+    - ollama:cloud/minimax-m2.5
+    - openrouter/kimi-k2.5-next
+
+security:
+  primary: opencode_free/glm-4.7-free
+  fallbacks:
+    - ollama:cloud/glm-5
+    - ollama:cloud/deepseek-r1-distill
+    - openrouter/deepseek-r1
+    - openrouter/glm-5-next
+
+sniper_sol:
+  primary: opencode_free/minimax-m2.1-free
+  fallbacks:
+    - ollama:cloud/minimax-m2.5
+    - ollama:cloud/deepseek-r1-distill
+    - openrouter/minimax-m2.5-next
+
+trader_farmer:
+  primary: opencode_free/glm-4.7-free
+  fallbacks:
+    - ollama:cloud/glm-5
+    - ollama:cloud/minimax-m2.5
+    - openrouter/glm-5-next
+
+trader_quant:
+  primary: ollama:cloud/deepseek-r1-distill
+  fallbacks:
+    - ollama:cloud-cloud-large/deepseek-r1
+    - ollama:cloud/glm-5
+    - openrouter/deepseek-r1-next
+    - openrouter/glm-5-next
