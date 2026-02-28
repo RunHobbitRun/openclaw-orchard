@@ -7,6 +7,7 @@
 | wallet-manager | Secure Solana wallet generation & balance checking | DevTeam | Deployed | Yes |
 | token-launcher | SPL token creation, minting, and info | DevTeam | Deployed | Yes |
 | sniper-monitor | Token data from DexScreener (trending, search, top) | Sniper | Deployed | Yes |
+| local-rag | Semantic search for Markdown/PDF with embeddings | Intelligence | Deployed | Yes |
 | [pending] | Supabase schema | All | In Queue | No |
 
 ## Current Queue
