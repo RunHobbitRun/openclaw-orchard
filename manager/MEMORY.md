@@ -42,3 +42,9 @@
 ## Dev Team Queue
 - **TASK-002 (Intelligence Ops):** Build Local Document RAG script. Must run in sandbox, ingest PDFs/Markdown, and provide semantic search to replace NotebookLM. [STATUS: PENDING]
 - **TASK-003 (System Ops):** Build Automated Workspace Backup/Sync script. Must use git to push `/home/ubuntu/.openclaw/workspace` to a remote private repository on a schedule. [STATUS: COMPLETE]
+
+## Dev Team Queue
+- **TASK-004 (Sniper Ops):** Build Sniper Sleuth Toolkit. On-chain mapping CLI (Bundle Analyzer, Bank Tracer, Dev Profiler) to track successful devs and early buyers. [STATUS: PENDING]
+
+## Dev Team Queue
+- **TASK-005 (Auditor/Finance Ops):** Deploy Supabase Schema. Read `workspace/supabase_schema.sql` and run it against the Supabase database via standard PSQL/CLI to build the agent_actions, portfolio_state, and trade_ledger tables. Auditor cannot monitor until this is done. [STATUS: PENDING]

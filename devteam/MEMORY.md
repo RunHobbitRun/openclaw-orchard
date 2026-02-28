@@ -8,6 +8,7 @@
 | token-launcher | SPL token creation, minting, and info | DevTeam | Deployed | Yes |
 | sniper-monitor | Token data from DexScreener (trending, search, top) | Sniper | Deployed | Yes |
 | local-rag | Semantic search for Markdown/PDF with embeddings | Intelligence | Deployed | Yes |
+| sleuth | On-chain tracing tools (bundle-analyzer, bank-tracer, dev-profiler) | Sniper | Deployed | Yes |
 | [pending] | Supabase schema | All | In Queue | No |
 
 ## Current Queue
