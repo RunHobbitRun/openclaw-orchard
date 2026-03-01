@@ -181,3 +181,6 @@ Instead of DevTeam writing custom CLOB algorithms from scratch, Trader Farmer wi
   3. Current market meta via DexScreener/X trends
 - **Output:** Populating `/openclaw-knowledge/` with actionable trading intelligence
 - **Purpose:** Arm Sniper with criteria for "what makes a good snipe" and Factory with current meme narratives
+
+## Reminders Logged (Mar 1, 2026)
+- [ ] REMINDER: Extract NotebookLM cookies from browser - Mar 2 at 06:00 UTC (Max)
