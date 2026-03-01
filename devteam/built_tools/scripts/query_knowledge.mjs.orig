@@ -7,8 +7,7 @@ async function main() {
     if (!query) throw new Error("Missing search query.");
     const transport = new StdioClientTransport({
         command: "node",
-        args: ["/home/ubuntu/.openclaw/workspace/mcps/obsidian-mcp/build/main.js", "/home/ubuntu/openclaw-knowledge"],
-        stderr: "ignore"
+        args: ["/home/ubuntu/.openclaw/workspace/mcps/obsidian-mcp/build/main.js", "/home/ubuntu/openclaw-knowledge"]
     });
     const client = new Client({ name: "qclient", version: "1.0.0" }, { capabilities: {} });
     await client.connect(transport);

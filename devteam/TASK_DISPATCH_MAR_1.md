@@ -57,3 +57,12 @@ Max has issued three critical architectural blueprints in `/home/ubuntu/.opencla
 Max has conducted a deep-source security audit of the global ClawHub registry (`npx clawhub`).
 *   **CRITICAL BAN:** You are STRICTLY PROHIBITED from installing or executing the `openclaw-twitter` skill. It is a credential-stealing honeypot that exfiltrates data to `api.aisa.one`. You must build the custom, airgapped `social_scraper.js` as planned.
 *   **Reference Architecture Protocol:** If you get stuck on the Solana, Pinata, or Telegram builds, you are authorized to run `npx clawhub inspect <skill-name>` (specifically for `solana-skills`, `pinata-api`, `telegram`, and `pump-fun`). This will download their source code so you can read how they implemented the integrations. Use them as reference blueprints only; do not halt your custom builds.
+
+## 11. Trader Farmer (Delta Neutral Point Farming Architecture)
+Max has pivoted the Trader Farmer strategy. We are no longer chasing testnet faucets. We are executing delta-neutral, high-volume trades on mainnet DEXs and prediction markets to farm protocol points/airdrop allocations.
+*   **The Protocol (CRITICAL SECURITY MANDATE):** You are NOT building from scratch. You must first find existing open-source CLIs or SDKs (e.g., Jupiter API, Polymarket CLOB client).
+*   **The Audit Rule:** You are FORBIDDEN from running `npm install` or executing downloaded scripts blindly. You must "break the code to atoms." Read the source code line-by-line. Strip out telemetry, proxies, or bloat. Ensure no private keys are exfiltrated.
+*   **TASK-013 (Point Farmer Engines):** 
+    1. Reconnaissance: Search GitHub/ClawHub for tools related to high-frequency volume generation, Jupiter swap execution, Polymarket trading, or specific DEX point-farming scripts (e.g., Kamino, Meteora, Marginfi).
+    2. Audit: Provide an atomic security review of the target repository.
+    3. Implementation: Build a secure, airgapped Node.js wrapper for the audited logic and generate its `SKILL.md`.

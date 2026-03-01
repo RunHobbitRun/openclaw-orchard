@@ -9,8 +9,8 @@
 ## Department Status
 | Department | Phase | Benchmark | Status |
 |---|---|---|---|
-| Factory | Paper | 5 perfect launch packages | IN PROGRESS |
-| Sniper | Setup | 40% wallet accuracy | NOT STARTED |
+| Factory | Paper | 5 perfect launch packages | ACTIVE - PAPER PHASE |
+| Sniper | Paper | 40% wallet accuracy | ACTIVE - PAPER PHASE |
 | Trader Farmer | Setup | Positive simulation 2-week window | NOT STARTED |
 | Trader Quant | Setup | Core strategy identified | NOT STARTED |
 | Prediction God | Setup | Acceptable calibration score | NOT STARTED |
@@ -128,3 +128,45 @@
 - **APPROVED:** `solana-skills`. Clean, native Python scripts using official SDKs (`solana`, `solders`) and RPCs. Reads `SOLANA_PRIVATE_KEY` locally from `.env` without exfiltration.
 - **APPROVED:** `pinata-api`, `telegram`, `pump-fun`. Clean, official interfaces hitting standard endpoints (`api.telegram.org`, `api.pinata.cloud`).
 - **DevTeam Protocol:** DevTeam may use `npx clawhub inspect <skill-name>` on APPROVED skills to download and read their source code as reference architectures if they get stuck building our custom airgapped versions.
+
+## Strategic Architecture (Updated Mar 1, 2026 - Trader Farmer Pivot)
+### Trader Farmer (Point & Yield Hunter)
+- **Core Goal:** Generate free or extremely cheap points/rewards on mainnet DEXs and prediction markets (e.g., Nado DEX, Polymarket).
+- **Strategy:** Delta-neutral trading, low-margin arbitrage, or stablecoin yield loops. The objective is to maximize transaction volume and point accumulation with near-zero price exposure.
+- **Security Protocol:** No blind execution of third-party code. All external repos, CLIs, or ClawHub skills must be "broken to atoms" (line-by-line audit) by the DevTeam to strip malware, exfiltration risks, and prompt injection vectors before deployment.
+
+## Strategic Architecture (Updated Mar 1, 2026 - Trader Farmer Expansion)
+### DEX Selection & Automated Platforms (Telegram Alpha)
+Max provided raw alpha detailing the current meta for high-volume point farming across EVM/Solana DEXs:
+*   **Target DEXs:** Extended, Nado, Dreamcash,  Pacifica, Aster.
+*   **Automated Platforms (No Code / Low Code):**
+    1.  **Origami Tech:** Advanced. Custom or template strategies (DCA bots). 1 bps fee. High risk if leveraged poorly, but can yield points at *negative cost* (free) if tuned correctly.
+    2.  **Planemo:** Simplest UI. 1 bps fee on Extended. Has its own point program + revenue share. **WARNING:** "Surge Pro" and "Orderbook Surge" strategies are deeply unprofitable. **SAFE:** Momentum Edge and Delta-Neutral.
+    3.  **TreadFi:** Most famous. Market Maker (risky) and Delta Neutral (no market risk, only spread/fee friction). Point program active.
+
+**The Farmer's Protocol:** 
+Instead of DevTeam writing custom CLOB algorithms from scratch, Trader Farmer will leverage these existing automated terminals (Origami, Planemo, TreadFi) to deploy Delta-Neutral or Momentum strategies.
+*   **DevTeam Task:** Build Playwright/Puppeteer headless browser scripts (or reverse-engineer the platform APIs) so the Farmer agent can programmatically connect wallets, configure DCA/DN strategies, monitor margin, and halt execution if drawdown exceeds limits on these specific web UIs.
+
+## Trader Farmer & Prediction God Target List (Updated Mar 1, 2026)
+**Excluded:** Hyperliquid (Removed per Max).
+**DEX / Perp Targets:**
+- Trader.xyz (https://trade.xyz/)
+- EdgeX (https://pro.edgex.exchange/)
+- Variational Omni (https://omni.variational.io/)
+- Titan Exchange (https://titan.exchange/)
+- Nado (https://app.nado.xyz/perpetuals)
+- Hibachi (Based - https://x.com/hibachi_xyz)
+- Dreamcash
+- Pacifica (pacifica_fi)
+- Ethereal DEX (etherealdex)
+
+**Prediction Market Targets:**
+- Probable
+- Predict.fun
+- Noise
+
+**Execution Strategy:**
+- Use browser automation (Playwright/Puppeteer) or reverse-engineer the private web APIs of these platforms.
+- Scout will continuously monitor for new point-farming metas on emerging platforms.
+- One burner wallet per protocol to isolate smart contract risk.
