@@ -9,7 +9,7 @@
 | sniper-monitor | Token data from DexScreener (trending, search, top) | Sniper | Deployed | Yes |
 | local-rag | Semantic search for Markdown/PDF with embeddings | Intelligence | Deployed | Yes |
 | sleuth | On-chain tracing tools (bundle-analyzer, bank-tracer, dev-profiler) | Sniper | Deployed | Yes |
-| deploy-supabase | Database schema deploy script | All | Ready | Blocked: needs DB access |
+| deploy-supabase | Database schema deploy script | All | Ready | Deployed |
 
 ## Current Queue
 | Priority | Task | Requested By | Status |

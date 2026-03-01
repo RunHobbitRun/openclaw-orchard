@@ -1,36 +1,37 @@
 #!/bin/bash
 # Workspace automated backup sync script
-# Uses GitHub PAT from environment variable GITHUB_PAT
-# This script syncs /home/ubuntu/.openclaw/workspace to GitHub
+# Reads token from hidden file and pushes without storing it in config
 
 set -e
 
 WORKSPACE="/home/ubuntu/.openclaw/workspace"
-GITHUB_TOKEN="${GITHUB_PAT}"
+TOKEN_FILE="${WORKSPACE}/.github_token"
 
-# Configure git if not already done
+if [ -f "$TOKEN_FILE" ]; then
+    GITHUB_TOKEN=$(cat "$TOKEN_FILE")
+else
+    echo "Error: Token file not found"
+    exit 1
+fi
+
 git config --global user.email "devteam@openclaw.local" 2>/dev/null || true
 git config --global user.name "DevTeam" 2>/dev/null || true
 
 cd "$WORKSPACE"
-
-# Add all changes
 git add -A
 
-# Check if there are changes to commit
 if git diff --staged --quiet; then
     echo "No changes to sync"
     exit 0
 fi
 
-# Commit with timestamp
 git commit -m "Workspace backup: $(date -u '+%Y-%m-%d %H:%M UTC')"
 
-# Push to remote
-git push -u origin main 2>/dev/null || git push -u origin master 2>/dev/null || {
-    # If remote doesn't exist, try to create it or prompt user
-    echo "No remote configured. Please add a remote:"
-    echo "  git remote add origin https://x-access-token:\${GITHUB_TOKEN}@github.com/OWNER/REPO.git"
+# Push dynamically to the correct repo using token
+REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/RunHobbitRun/orchard-workspace-sync.git"
+
+git push -u "${REPO_URL}" main 2>/dev/null || git push -u "${REPO_URL}" master 2>/dev/null || {
+    echo "Failed to push to orchard-workspace-sync"
     exit 1
 }
 

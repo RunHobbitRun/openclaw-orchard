@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS wallet_registry (
   chain           TEXT NOT NULL,  -- solana | hyperliquid | etc
   department      TEXT,           -- factory | sniper | trader_farmer | studio
   created_date    DATE NOT NULL,
-  age_days        INTEGER GENERATED ALWAYS AS (CURRENT_DATE - created_date) STORED,
+
   status          TEXT DEFAULT 'aging', -- aging | ready | active | compromised | retired
   antidetect_profile_id TEXT,
   proxy_assigned  BOOLEAN DEFAULT FALSE,

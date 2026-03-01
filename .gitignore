@@ -2,3 +2,8 @@ venv/
 rag/index.db
 rag/index.db
 solana-tools/node_modules/
+.github_token
+.cryptopanic_key
+.x_token
+.discord_token
+mcps/**/node_modules/
