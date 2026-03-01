@@ -7,3 +7,5 @@ solana-tools/node_modules/
 .x_token
 .discord_token
 mcps/**/node_modules/
+.pinata_keys
+.env

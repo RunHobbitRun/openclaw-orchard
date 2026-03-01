@@ -36,3 +36,24 @@ Max has just deployed the NotebookLM and Obsidian MCP servers. This fully replac
 
 *   **ABANDON TASK-002 and TASK-008:** Stop work on the SQLite local RAG immediately.
 *   **EXECUTE TASK-011 (MCP Tooling):** You must immediately review and execute `SPEC-006-MCP-Tools.md` in your workspace. Build the Node.js wrappers (`deep_research.js` and `query_knowledge.js`) so that our executing agents can talk to these MCP servers via standard system run commands. The servers are at `/home/ubuntu/.openclaw/workspace/mcps/` and the vault is at `/home/ubuntu/.openclaw/workspace/openclaw-knowledge/`.
+
+## 7. Factory Metadata Uploader (New Input)
+Max has provided Pinata IPFS credentials.
+*   **TASK-009 (IPFS Uploader):** Build `ipfs_uploader.js` for the Factory agent. It must read credentials from `/home/ubuntu/.openclaw/workspace/.pinata_keys` and upload image + JSON metadata to Pinata to return the final metadata URI required for `token-launcher.js`.
+*   **SKILL DEFINITION:** Create the corresponding `SKILL.md` for this script so Factory knows how to use it.
+
+## 8. Factory Asset Generator (API KEY FOUND)
+Max noted we already have the Gemini API key. Since we don't have a direct workspace file, the DevTeam must pull it dynamically from the OpenClaw environment config or assume it's available via standard OpenAI-compatible API tools utilizing the `openclaw.json` configuration for `google/gemini-3.1-pro-preview` or `gemini-3-flash-preview`.
+*   **TASK-012 (Gemini Asset Engine):** Build `asset_generator.js`. The Factory agent will use this script to send a "Launch Proposal" prompt to the Gemini API, returning the Ticker, Name, Description, and the generated Image file.
+*   **SKILL DEFINITION:** Write the accompanying `SKILL.md` for this generator.
+
+## 9. Architectural Blueprints (CRITICAL UPDATE)
+Max has issued three critical architectural blueprints in `/home/ubuntu/.openclaw/workspace/devteam/BLUEPRINT_MAR_1.md`.
+*   **Blueprint 1:** You MUST use `@modelcontextprotocol/sdk` for the MCP wrappers (`deep_research.js` & `query_knowledge.js`) and output a raw string.
+*   **Blueprint 2:** `ipfs_uploader.js` MUST have dual-upload logic (Pinata primary, Irys fallback) and return the final URI.
+*   **Blueprint 3:** You MUST write a `SKILL.md` instructional manifest for EVERY operational script (`token-launcher.js`, `sleuth.js`, the MCP wrappers, the IPFS uploader) and place them in the correct agent's workspace folder (e.g., `/home/ubuntu/.openclaw/workspace/factory/skills/`).
+
+## 10. ClawHub Supply-Chain Audit & Reference Protocol
+Max has conducted a deep-source security audit of the global ClawHub registry (`npx clawhub`).
+*   **CRITICAL BAN:** You are STRICTLY PROHIBITED from installing or executing the `openclaw-twitter` skill. It is a credential-stealing honeypot that exfiltrates data to `api.aisa.one`. You must build the custom, airgapped `social_scraper.js` as planned.
+*   **Reference Architecture Protocol:** If you get stuck on the Solana, Pinata, or Telegram builds, you are authorized to run `npx clawhub inspect <skill-name>` (specifically for `solana-skills`, `pinata-api`, `telegram`, and `pump-fun`). This will download their source code so you can read how they implemented the integrations. Use them as reference blueprints only; do not halt your custom builds.
