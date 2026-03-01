@@ -170,3 +170,14 @@ Instead of DevTeam writing custom CLOB algorithms from scratch, Trader Farmer wi
 - Use browser automation (Playwright/Puppeteer) or reverse-engineer the private web APIs of these platforms.
 - Scout will continuously monitor for new point-farming metas on emerging platforms.
 - One burner wallet per protocol to isolate smart contract risk.
+
+## Active Intelligence Operations (Mar 1, 2026)
+**TASK-001: Trading Intel Gathering**
+- **Status:** DISPATCHED
+- **Agent:** Intelligence
+- **Sources:**
+  1. AK.pro docs (https://docs.akbot.pro/) - for Sniper execution criteria
+  2. Discord Incrypted+ & OpenClaw channels - for alpha patterns and smart money wallets
+  3. Current market meta via DexScreener/X trends
+- **Output:** Populating `/openclaw-knowledge/` with actionable trading intelligence
+- **Purpose:** Arm Sniper with criteria for "what makes a good snipe" and Factory with current meme narratives
