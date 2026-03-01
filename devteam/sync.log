@@ -16712,3 +16712,21 @@ See "git help gc" for manual housekeeping.
  create mode 100644 devteam/built_tools/skills/query_knowledge/SKILL.md
  create mode 100644 devteam/built_tools/skills/social_scraper/SKILL.md
 Failed to push to orchard-workspace-sync
+[master 4f1babfe] Workspace backup: 2026-03-01 15:00 UTC
+ 19 files changed, 16777 insertions(+), 665 deletions(-)
+ create mode 100644 devteam/built_tools/scripts/query_knowledge.mjs.orig
+ delete mode 100644 openclaw-knowledge/.obsidian/app.json
+ delete mode 100644 openclaw-knowledge/.obsidian/appearance.json
+ delete mode 100644 openclaw-knowledge/.obsidian/core-plugins.json
+ delete mode 100644 openclaw-knowledge/.obsidian/graph.json
+ delete mode 100644 openclaw-knowledge/.obsidian/workspace.json
+ delete mode 100644 openclaw-knowledge/Deep-Research-Summary.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/Architecture/OpenClaw-Architecture-Deep-Dive.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/Architecture/OpenClaw-Security-Sandboxing-Exec.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/Ecosystem/OpenClaw-Community-Skills-Directory.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/Ecosystem/OpenClaw-Safe-Bundled-Skills.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/Official-Docs/OpenClaw-Official-Docs-Synthesis.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/OpenClaw-Security-Hardening.md
+ delete mode 100644 openclaw-knowledge/Deep-Research/OpenClaw-Skills-Ecosystem.md
+ delete mode 100644 openclaw-knowledge/Welcome.md
+Failed to push to orchard-workspace-sync
