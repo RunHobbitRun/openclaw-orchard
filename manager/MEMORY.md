@@ -59,7 +59,7 @@
 - **TASK-009 (Factory Ops):** Build IPFS/Arweave Uploader (e.g., Pinata or Irys CLI). Factory needs this to host token metadata (Image, Name, Ticker, JSON) before calling the Token Launcher. [STATUS: PENDING]
 - **TASK-010 (Sniper Ops):** Build AK.pro Handoff Pipeline. Sniper does not execute trades; it needs a script to write target contract addresses to a specific JSON file or fire a webhook that AK.pro reads to execute the buy. [STATUS: PENDING]
 - **TASK-011 (MCP Tooling):** Antigravity IDE has deployed `obsidian-mcp` and `notebook-mcp` to `/home/ubuntu/.openclaw/workspace/mcps`. DevTeam must create interaction scripts (e.g. `query_knowledge.js`, `deep_research.js`) for the agents to utilize these tools. Knowledge base is at `openclaw-knowledge/`. [STATUS: PENDING]
-- **TASK-012 (Auditor Ops):** Build Supabase Query CLI. Read-only tool for Auditor to check database status, portfolio, and recent actions. [STATUS: IN PROGRESS - Mar 2, 2026]
+- **TASK-012 (Auditor Ops):** Build Supabase Query CLI. Read-only tool for Auditor to check database status, portfolio, and recent actions. [STATUS: COMPLETE - Mar 2, 2026] Location: /auditor/supabase-query.mjs
 
 ## Strategic Architecture (Corrected Mar 1, 2026)
 ### Factory (Continuous Meme Pipeline)
