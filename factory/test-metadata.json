@@ -1,0 +1,17 @@
+{
+  "name": "OpenClaw Test Token",
+  "symbol": "OCTT",
+  "description": "A test token metadata for IPFS upload testing",
+  "image": "ipfs://QmTestPlaceholder",
+  "external_url": "https://openclaw.io",
+  "attributes": [
+    {
+      "trait_type": "Type",
+      "value": "Test"
+    },
+    {
+      "trait_type": "Network",
+      "value": "Ethereum"
+    }
+  ]
+}
