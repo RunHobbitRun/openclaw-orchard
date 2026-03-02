@@ -49,8 +49,20 @@ _Last updated: 2026-03-02 UTC._
 - Pending: 3
 
 ## Pending Inputs From Max
-- Burner Telegram account/session for alpha scraping: REQUIRED
-  - Note: This is a burner credential requirement for TASK-007, not Max contact routing.
+- Burner Telegram account/session for alpha scraping: REQUIRED (TASK-007)
+- **Factory/Sniper/DevTeam activation:** Max needs to start these agent sessions (Manager lacks spawn permission)
+
+## Activation Status (2026-03-02 19:10 UTC)
+| Agent | Status | Mode | Dependency |
+|---|---|---|---|
+| Factory | ACTIVATION.md ready | Continuous loop | None |
+| Sniper | ACTIVATION.md ready | Continuous loop | None |
+| DevTeam | ACTIVATION.md ready | Task-based | None |
+| Scout | ACTIVATION.md ready | Continuous | Intelligence CT sources |
+| Intelligence | ACTIVATION.md ready | Continuous | Max's CT accounts |
+| Trader Farmer | SETUP | — | Not created |
+| Trader Quant | SETUP | — | Not created |
+| Prediction God | SETUP | — | Not created |
 
 ## Operational Reminders
 - If dev wallet falls below 0.1 SOL, pause launch workflow and alert Max.
