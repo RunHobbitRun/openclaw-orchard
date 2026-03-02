@@ -14,6 +14,7 @@ Run every 5 minutes. Check each item. Act only if condition is met.
 - [ ] Monday 09:00 UTC — compile and send Weekly Brief to Max
 - [ ] 1st of month 10:00 UTC — compile and send Monthly Review to Max
 - [ ] Intelligence Agent market update received → read summary, add to context for next brief
+- [ ] **BI-HOURLY UPDATES:** 08:00, 10:00, 12:00, 14:00, 16:00, 18:00, 20:00, 22:00, 00:00, 02:00, 04:00, 06:00 UTC — send status update to Max
 
 ## 🟢 Routine Checks
 - [ ] Any department sent a signal → log in appropriate department section of MEMORY.md

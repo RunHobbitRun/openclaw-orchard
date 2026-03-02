@@ -38,20 +38,20 @@
 - **Tool Access:** Agents must explicitly justify the need for any new tools. No extra tools without serious reason. Least privilege applies.
 
 ## Dev Team Queue
-- **TASK-001 (Solana Ops):** Build Wallet Manager CLI (Done), Token Launcher CLI (Done), and Sniper Data Monitor CLI (Done). [STATUS: PENDING REMEDIATION - QA FAILED]
+- **TASK-001 (Solana Ops):** Build Wallet Manager CLI (Done), Token Launcher CLI (Done), and Sniper Data Monitor CLI (Done). [STATUS: QA PASSED - Mar 2, 2026]
 
 ## Dev Team Queue
 - **TASK-002 (Intelligence Ops):** Build Local Document RAG script. Must run in sandbox, ingest PDFs/Markdown, and provide semantic search to replace NotebookLM. [STATUS: PENDING]
 - **TASK-003 (System Ops):** Build Automated Workspace Backup/Sync script. Must use git to push `/home/ubuntu/.openclaw/workspace` to a remote private repository on a schedule. [STATUS: COMPLETE]
 
 ## Dev Team Queue
-- **TASK-004 (Sniper Ops):** Build Sniper Sleuth Toolkit. On-chain mapping CLI (Bundle Analyzer, Bank Tracer, Dev Profiler) to track successful devs and early buyers. [STATUS: PENDING REMEDIATION - QA FAILED]
+- **TASK-004 (Sniper Ops):** Build Sniper Sleuth Toolkit. On-chain mapping CLI (Bundle Analyzer, Bank Tracer, Dev Profiler) to track successful devs and early buyers. [STATUS: QA PASSED - Mar 2, 2026 (minor: bank-tracer needs retry logic)]
 
 ## Dev Team Queue
 - **TASK-005 (Auditor/Finance Ops):** Deploy Supabase Schema. Read `workspace/supabase_schema.sql` and run it against the Supabase database via standard PSQL/CLI to build the agent_actions, portfolio_state, and trade_ledger tables. Auditor cannot monitor until this is done. [STATUS: COMPLETE]
 
 ## Dev Team Queue
-- **TASK-006 (Context Ops):** Build Burner X (Twitter) Scraper. Must pull specific influencer sentiment and ticker hype for Sniper and Factory to read. [STATUS: PENDING]
+- **TASK-006 (Context Ops):** Build Burner X (Twitter) Scraper. Must pull specific influencer sentiment and ticker hype for Sniper and Factory to read. [STATUS: BUILT - Mar 2, 2026] Location: /devteam/built_tools/scripts/x-scraper.mjs
 - **TASK-007 (Context Ops):** Build Telegram Alpha Group Scraper. Read-only client to ingest token calls from specific alpha channels to feed Sniper's entry logic. [STATUS: PENDING]
 - **TASK-008 (Context Ops):** Build Shared Knowledge Bridge. Connect TASK-002 (RAG) and the social scrapers so Intelligence can broadcast actionable daily context down to Factory and Sniper workspaces. [STATUS: PENDING]
 
@@ -59,6 +59,7 @@
 - **TASK-009 (Factory Ops):** Build IPFS/Arweave Uploader (e.g., Pinata or Irys CLI). Factory needs this to host token metadata (Image, Name, Ticker, JSON) before calling the Token Launcher. [STATUS: PENDING]
 - **TASK-010 (Sniper Ops):** Build AK.pro Handoff Pipeline. Sniper does not execute trades; it needs a script to write target contract addresses to a specific JSON file or fire a webhook that AK.pro reads to execute the buy. [STATUS: PENDING]
 - **TASK-011 (MCP Tooling):** Antigravity IDE has deployed `obsidian-mcp` and `notebook-mcp` to `/home/ubuntu/.openclaw/workspace/mcps`. DevTeam must create interaction scripts (e.g. `query_knowledge.js`, `deep_research.js`) for the agents to utilize these tools. Knowledge base is at `openclaw-knowledge/`. [STATUS: PENDING]
+- **TASK-012 (Auditor Ops):** Build Supabase Query CLI. Read-only tool for Auditor to check database status, portfolio, and recent actions. [STATUS: IN PROGRESS - Mar 2, 2026]
 
 ## Strategic Architecture (Corrected Mar 1, 2026)
 ### Factory (Continuous Meme Pipeline)

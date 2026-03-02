@@ -1,12 +1,15 @@
 # Auditor — Memory
 
 ## Status
-- System: OPERATIONAL (monitoring limited)
-- Last audit: 2026-03-01 17:05 UTC
-- Database: Supabase credentials available — direct query blocked (no shell execution)
-- Last portfolio check: N/A
+- System: FULLY OPERATIONAL
+- Last audit: 2026-03-02 10:45 UTC
+- Database: Supabase CONNECTED — all tables verified
+  - ✅ agent_actions: EXISTS
+  - ✅ portfolio_state: EXISTS  
+  - ✅ trade_ledger: EXISTS
+- Last portfolio check: N/A (no capital deployed)
 - Last capital check: N/A
-- Active watches: standard heartbeat (deferred)
+- Active watches: standard heartbeat
 - Alerts sent: 0
 
 ## Alert History
