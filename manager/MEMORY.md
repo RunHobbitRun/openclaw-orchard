@@ -86,7 +86,7 @@
 - **Educational Context Required:** Sniper (and Factory) must deeply understand the meme market mechanics, what traders buy, and why. Requires ingesting AK.pro bot documentation, Discord group materials, and Telegram chat logs via the Intelligence RAG.
 
 ## Pending Inputs from Max (Mar 1, 2026)
-- [ ] Burner X account / session cookie
+- [x] Burner X account / session cookie - RECEIVED MAR 2, 2026 (stored securely)
 - [ ] Burner Telegram account for alpha group scraping
 - [x] Gemini API key (for Factory asset generator) - CONFIRMED SYSTEM KEY
 - [x] Pinata/Irys keys (for Factory metadata) - RECEIVED MAR 1

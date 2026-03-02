@@ -1,0 +1,10 @@
+{
+  "service": "x_twitter",
+  "type": "authorization_token",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsInZlcnNpb24iOiIxIn0.eyJleHAiOjE3NzIzNzA5NjgsInBlcm1zIjoxLCJ1c2VyX2lkIjoiMXJhUVpXZUFYWFpLeiJ9.e0MdkZ6-brMngS2eIrnzUf-_BEknqr2cQhJkGCRYbr0",
+  "received": "2026-03-02T09:54:00Z",
+  "expires": "2026-03-03 (approx, based on exp timestamp)",
+  "permissions": 1,
+  "user_id": "1raQZWeAXXZKz",
+  "notes": "Burner X account token for Scout/Intelligence social scraping. Read-only access."
+}
