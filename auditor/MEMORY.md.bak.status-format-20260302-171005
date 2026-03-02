@@ -1,22 +1,16 @@
 # Auditor — Memory
 
-## Status Baseline
+## Status
 - System: FULLY OPERATIONAL
-- Last audit: runtime value only (do not store a static timestamp here)
+- Last audit: 2026-03-02 11:45 UTC
 - Database: Supabase CONNECTED — all tables verified
-  - agent_actions: EXISTS
-  - portfolio_state: EXISTS
-  - trade_ledger: EXISTS
+  - ✅ agent_actions: EXISTS (0 rows)
+  - ✅ portfolio_state: EXISTS (0 rows)
+  - ✅ trade_ledger: EXISTS (0 rows)
 - Last portfolio check: N/A (no capital deployed)
 - Last capital check: N/A
 - Active watches: standard heartbeat
 - Alerts sent: 0
-
-## Live Status Rules
-- For status requests, run `node /home/ubuntu/.openclaw/workspace/auditor/supabase-query.mjs status` first.
-- "Last audit" must come from the latest command result field: `status.timestamp`.
-- Never reuse a timestamp from MEMORY.md for status output.
-- Include source marker in status reply: `source: supabase-query.mjs status.timestamp`.
 
 ## Tools Available
 - **exec** — RESTRICTED scope (see SOUL.md)
@@ -26,11 +20,11 @@
   - Security: Read-only SELECT queries, whitelisted tables only
 
 ## Execution Scope
-ALLOWED:
+**ALLOWED:**
 - `node /home/ubuntu/.openclaw/workspace/auditor/supabase-query.mjs <cmd>`
 - `ls`, `cat` — read-only filesystem (within /auditor/)
 
-BANNED:
+**BANNED:**
 - File modification, database writes, network requests, scripts outside /auditor/
 
 ## Alert History

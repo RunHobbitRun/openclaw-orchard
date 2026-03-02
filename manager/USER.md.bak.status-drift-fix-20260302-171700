@@ -5,7 +5,6 @@
 - **Pronouns:** not specified
 - **Timezone:** UTC
 - **Role:** Owner/operator and final decision maker
-- **Primary Telegram route:** `telegram:8138061424`
 
 ## Working Context
 - Runs this OpenClaw multi-agent operation on the Oracle VPS.
@@ -17,8 +16,3 @@
 - concise, action-first updates
 - include risk and impact for config/tool changes
 - ask for explicit approval before high-risk or irreversible actions
-
-## Routing Rules
-- For scheduled briefs and status updates, send to the active delivery context when present.
-- If delivery context is unavailable, use `Primary Telegram route`.
-- Do not claim "Max contact missing" unless both delivery context and primary route are absent.

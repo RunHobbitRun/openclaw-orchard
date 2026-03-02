@@ -7,11 +7,6 @@ _Last updated: 2026-03-02 UTC._
 - Paper phase active: Factory, Sniper
 - Live execution: DISABLED until explicit Max approval
 
-## Contact & Routing
-- Max Telegram route: `telegram:8138061424` (configured)
-- Scheduled briefs should use active delivery context first, then fallback route.
-- Contact blocker status: CLEAR
-
 ## Department Status
 | Department | Current State | Gate to Progress |
 |---|---|---|
@@ -43,14 +38,8 @@ _Last updated: 2026-03-02 UTC._
 - TASK-006 Burner X sentiment scraper — BUILT
 - TASK-012 Auditor Supabase query CLI — COMPLETE
 
-## Dev Queue Snapshot (for status reports)
-- Done: 6
-- In progress: 3
-- Pending: 3
-
 ## Pending Inputs From Max
 - Burner Telegram account/session for alpha scraping: REQUIRED
-  - Note: This is a burner credential requirement for TASK-007, not Max contact routing.
 
 ## Operational Reminders
 - If dev wallet falls below 0.1 SOL, pause launch workflow and alert Max.
