@@ -11,6 +11,11 @@
 | sleuth | On-chain tracing tools (bundle-analyzer, bank-tracer, dev-profiler) | Sniper | Deployed | Yes |
 | deploy-supabase | Database schema deploy script | All | Deployed | Yes |
 
+## Deployed
+- Supabase schema (7 tables): `trade_ledger`, `agent_actions`, `portfolio_state`, `wallet_registry`, `paper_trades`, `company_wiki`, `department_status`
+- All 5 departments pre-populated in `department_status` with `'setup'` phase
+- Git synced to `https://github.com/RunHobbitRun/openclaw-orchard.git` (commit `705437d3`)
+
 ## Current Queue
 | Priority | Task | Requested By | Status |
 |---|---|---|---|
@@ -20,7 +25,3 @@
 ## Staging Environment
 - Antigravity IDE workspace: configured
 - Available CLIs: gemini, opencode, kilocode, codex, pi
-
-## Deployed
-- Supabase schema (7 tables): trade_ledger, agent_actions, portfolio_state, wallet_registry, paper_trades, company_wiki, department_status
-- All 5 departments pre-populated in department_status with 'setup' phase
