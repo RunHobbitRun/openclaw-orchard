@@ -4,6 +4,7 @@ import path from "node:path";
 import type { Chat, Message } from "@grammyjs/types";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { escapeRegExp, formatEnvelopeTimestamp } from "../../test/helpers/envelope-timestamp.js";
+import * as ssrf from "../infra/net/ssrf.js";
 import {
   answerCallbackQuerySpy,
   botCtorSpy,
@@ -51,11 +52,34 @@ const TELEGRAM_TEST_TIMINGS = {
 } as const;
 
 describe("createTelegramBot", () => {
+  let resolvePinnedHostnameWithPolicySpy: ReturnType<typeof vi.spyOn> | undefined;
+  let resolvePinnedHostnameSpy: ReturnType<typeof vi.spyOn> | undefined;
+
+  const stubPinnedHostname = (hostname: string): ssrf.PinnedHostname => {
+    const normalized = hostname.trim().toLowerCase();
+    const addresses = ["203.0.113.10"];
+    return {
+      hostname: normalized,
+      addresses,
+      lookup: ssrf.createPinnedLookup({ hostname: normalized, addresses }),
+    };
+  };
+
   beforeEach(() => {
     process.env.TZ = "UTC";
+    resolvePinnedHostnameWithPolicySpy = vi
+      .spyOn(ssrf, "resolvePinnedHostnameWithPolicy")
+      .mockImplementation(async (hostname) => stubPinnedHostname(hostname));
+    resolvePinnedHostnameSpy = vi
+      .spyOn(ssrf, "resolvePinnedHostname")
+      .mockImplementation(async (hostname) => stubPinnedHostname(hostname));
   });
   afterEach(() => {
     process.env.TZ = ORIGINAL_TZ;
+    resolvePinnedHostnameWithPolicySpy?.mockRestore();
+    resolvePinnedHostnameSpy?.mockRestore();
+    resolvePinnedHostnameWithPolicySpy = undefined;
+    resolvePinnedHostnameSpy = undefined;
   });
 
   // groupPolicy tests

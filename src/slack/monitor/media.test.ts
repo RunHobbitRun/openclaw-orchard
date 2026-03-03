@@ -173,7 +173,7 @@ describe("resolveSlackMedia", () => {
   beforeEach(() => {
     mockFetch = vi.fn();
     globalThis.fetch = withFetchPreconnect(mockFetch);
-    vi.spyOn(ssrf, "resolvePinnedHostname").mockImplementation(async (hostname) => {
+    const stubPinnedHostname = async (hostname: string) => {
       const normalized = hostname.trim().toLowerCase().replace(/\.$/, "");
       const addresses = ["93.184.216.34"];
       return {
@@ -181,7 +181,9 @@ describe("resolveSlackMedia", () => {
         addresses,
         lookup: ssrf.createPinnedLookup({ hostname: normalized, addresses }),
       };
-    });
+    };
+    vi.spyOn(ssrf, "resolvePinnedHostnameWithPolicy").mockImplementation(stubPinnedHostname);
+    vi.spyOn(ssrf, "resolvePinnedHostname").mockImplementation(stubPinnedHostname);
   });
 
   afterEach(() => {

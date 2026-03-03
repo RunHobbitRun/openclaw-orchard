@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import WebSocket from "ws";
 import {
   ensureChromeExtensionRelayServer,
@@ -125,6 +125,20 @@ describe("chrome extension relay server", () => {
   const TEST_GATEWAY_TOKEN = "test-gateway-token";
   let cdpUrl = "";
   let previousGatewayToken: string | undefined;
+  let canBindLoopback = true;
+
+  const checkLoopbackBind = async () =>
+    await new Promise<boolean>((resolve) => {
+      const server = createServer();
+      server.once("error", () => resolve(false));
+      server.listen(0, "127.0.0.1", () => {
+        server.close(() => resolve(true));
+      });
+    });
+
+  beforeAll(async () => {
+    canBindLoopback = await checkLoopbackBind();
+  });
 
   beforeEach(() => {
     previousGatewayToken = process.env.OPENCLAW_GATEWAY_TOKEN;
@@ -143,7 +157,10 @@ describe("chrome extension relay server", () => {
     }
   });
 
-  it("advertises CDP WS only when extension is connected", async () => {
+  it("advertises CDP WS only when extension is connected", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     cdpUrl = `http://127.0.0.1:${port}`;
     await ensureChromeExtensionRelayServer({ cdpUrl });
@@ -170,14 +187,20 @@ describe("chrome extension relay server", () => {
     ext.close();
   });
 
-  it("uses gateway token for relay auth headers on loopback URLs", async () => {
+  it("uses gateway token for relay auth headers on loopback URLs", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     const headers = getChromeExtensionRelayAuthHeaders(`http://127.0.0.1:${port}`);
     expect(Object.keys(headers)).toContain("x-openclaw-relay-token");
     expect(headers["x-openclaw-relay-token"]).toBe(TEST_GATEWAY_TOKEN);
   });
 
-  it("rejects CDP access without relay auth token", async () => {
+  it("rejects CDP access without relay auth token", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     cdpUrl = `http://127.0.0.1:${port}`;
     await ensureChromeExtensionRelayServer({ cdpUrl });
@@ -190,7 +213,10 @@ describe("chrome extension relay server", () => {
     expect(err.message).toContain("401");
   });
 
-  it("rejects extension websocket access without relay auth token", async () => {
+  it("rejects extension websocket access without relay auth token", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     cdpUrl = `http://127.0.0.1:${port}`;
     await ensureChromeExtensionRelayServer({ cdpUrl });
@@ -200,7 +226,10 @@ describe("chrome extension relay server", () => {
     expect(err.message).toContain("401");
   });
 
-  it("accepts extension websocket access with gateway token query param", async () => {
+  it("accepts extension websocket access with gateway token query param", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     cdpUrl = `http://127.0.0.1:${port}`;
     await ensureChromeExtensionRelayServer({ cdpUrl });
@@ -212,7 +241,10 @@ describe("chrome extension relay server", () => {
     ext.close();
   });
 
-  it("tracks attached page targets and exposes them via CDP + /json/list", async () => {
+  it("tracks attached page targets and exposes them via CDP + /json/list", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     cdpUrl = `http://127.0.0.1:${port}`;
     await ensureChromeExtensionRelayServer({ cdpUrl });
@@ -330,7 +362,10 @@ describe("chrome extension relay server", () => {
     ext.close();
   }, 15_000);
 
-  it("rebroadcasts attach when a session id is reused for a new target", async () => {
+  it("rebroadcasts attach when a session id is reused for a new target", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     cdpUrl = `http://127.0.0.1:${port}`;
     await ensureChromeExtensionRelayServer({ cdpUrl });
@@ -401,7 +436,10 @@ describe("chrome extension relay server", () => {
     ext.close();
   });
 
-  it("reuses an already-bound relay port when another process owns it", async () => {
+  it("reuses an already-bound relay port when another process owns it", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     const fakeRelay = createServer((req, res) => {
       if (req.url?.startsWith("/extension/status")) {
@@ -437,7 +475,10 @@ describe("chrome extension relay server", () => {
     }
   });
 
-  it("does not swallow EADDRINUSE when occupied port is not an openclaw relay", async () => {
+  it("does not swallow EADDRINUSE when occupied port is not an openclaw relay", async function () {
+    if (!canBindLoopback) {
+      return;
+    }
     const port = await getFreePort();
     const blocker = createServer((_, res) => {
       res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
