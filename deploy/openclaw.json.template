@@ -33,73 +33,73 @@
       {
         "id": "manager",
         "name": "Manager",
-        "workspace": "~/.openclaw/workspace/manager",
+        "workspace": "~/.openclaw/workspace/domain_control/manager",
         "model": "gemini/gemini-3.1-pro-preview"
       },
       {
         "id": "auditor",
         "name": "Auditor",
-        "workspace": "~/.openclaw/workspace/auditor",
+        "workspace": "~/.openclaw/workspace/domain_control/auditor",
         "model": "gemini/gemini-3-flash"
       },
       {
         "id": "finance",
         "name": "Finance",
-        "workspace": "~/.openclaw/workspace/finance",
+        "workspace": "~/.openclaw/workspace/domain_control/finance",
         "model": "gemini/gemini-3-flash"
       },
       {
         "id": "intelligence",
         "name": "Intelligence",
-        "workspace": "~/.openclaw/workspace/intelligence",
+        "workspace": "~/.openclaw/workspace/domain_sensing/intelligence",
         "model": "gemini/gemini-3-flash"
       },
       {
         "id": "security",
         "name": "Security",
-        "workspace": "~/.openclaw/workspace/security",
+        "workspace": "~/.openclaw/workspace/domain_control/security",
         "model": "gemini/gemini-3-flash"
       },
       {
         "id": "scout",
         "name": "Scout",
-        "workspace": "~/.openclaw/workspace/scout",
+        "workspace": "~/.openclaw/workspace/domain_sensing/scout",
         "model": "gemini/gemini-3.1-pro-preview"
       },
       {
         "id": "devteam",
         "name": "DevTeam",
-        "workspace": "~/.openclaw/workspace/devteam",
+        "workspace": "~/.openclaw/workspace/domain_execution/devteam",
         "model": "anthropic/claude-sonnet-4-6"
       },
       {
         "id": "factory",
         "name": "Factory",
-        "workspace": "~/.openclaw/workspace/factory",
+        "workspace": "~/.openclaw/workspace/domain_execution/factory",
         "model": "gemini/gemini-3.1-pro-preview"
       },
       {
         "id": "sniper",
         "name": "Sniper",
-        "workspace": "~/.openclaw/workspace/sniper",
+        "workspace": "~/.openclaw/workspace/domain_execution/sniper",
         "model": "gemini/gemini-3.1-pro-preview"
       },
       {
         "id": "trader_farmer",
         "name": "TraderFarmer",
-        "workspace": "~/.openclaw/workspace/trader_farmer",
+        "workspace": "~/.openclaw/workspace/domain_execution/trader_farmer",
         "model": "gemini/gemini-3-flash"
       },
       {
         "id": "trader_quant",
         "name": "TraderQuant",
-        "workspace": "~/.openclaw/workspace/trader_quant",
+        "workspace": "~/.openclaw/workspace/domain_execution/trader_quant",
         "model": "gemini/gemini-3.1-pro-preview"
       },
       {
         "id": "prediction_god",
         "name": "PredictionGod",
-        "workspace": "~/.openclaw/workspace/prediction_god",
+        "workspace": "~/.openclaw/workspace/domain_execution/prediction_god",
         "model": "gemini/gemini-3.1-pro-preview"
       }
     ]
