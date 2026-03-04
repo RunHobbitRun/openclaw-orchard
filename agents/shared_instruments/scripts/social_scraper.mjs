@@ -21,7 +21,7 @@ const API_BASE = "https://api.twitter.com/2";
 function loadToken() {
   try {
     if (!fs.existsSync(TOKEN_PATH)) {
-      return process.env.X_TOKEN;
+      return process.env.X_TOKEN || null;
     }
     const content = fs.readFileSync(TOKEN_PATH, "utf8").trim();
     try {
@@ -41,7 +41,7 @@ function loadToken() {
 async function xRequest(endpoint, params = {}) {
   const token = loadToken();
   if (!token) {
-    throw new Error("No X token available in .x_token or environment.");
+    return { error: "No Token", sandbox: true };
   }
 
   try {
